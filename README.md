@@ -1,2 +1,2 @@
-# mlops
-Repo for MLOps Course @ MLDS Program, HSE
+# MLDS MLOps
+Repo for MLOps Course materials & homeworks @ MLDS Program, HSE
