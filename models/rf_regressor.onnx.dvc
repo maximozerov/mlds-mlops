@@ -1,0 +1,5 @@
+outs:
+- md5: 9c9b0b7c873d698ceb75eb44a53096b2
+  size: 160345257
+  hash: md5
+  path: rf_regressor.onnx
