@@ -9,6 +9,7 @@ After multiple experiments conducted in Jupyter notebooks the best model so far 
 
 This repo utilises several tools covered in the course:
 - poetry for dependency management
+- pre-commit hooks for code quality control
 - dvc for data version control (for dataset & trained model)
 - hydra for training parameters
 - mlflow for experiment tracking
