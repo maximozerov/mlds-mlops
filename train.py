@@ -65,7 +65,7 @@ def train(cfg: DictConfig):
 
     initial_type = [("float_input", FloatTensorType([None, X_train_transformed.shape[1]]))]
     onnx_model = convert_sklearn(rf, initial_types=initial_type)
-    with open("models/rf_regressor.onnx", "wb") as f:
+    with open(cfg.model.get("save_name", "rf_regressor"), "wb") as f:
         f.write(onnx_model.SerializeToString())
 
 
