@@ -1,0 +1,13 @@
+defaults:
+    - _self_
+
+model:
+    save_name: "./models/model.safetensors"
+    pull_dvc: True
+
+rf:
+    criterion: "squared_error"
+    n_estimators: 300
+
+train_and_validate:
+    test_size: 0.3
