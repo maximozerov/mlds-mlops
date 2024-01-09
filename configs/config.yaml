@@ -2,7 +2,7 @@ defaults:
     - _self_
 
 model:
-    save_name: "./models/model.safetensors"
+    save_name: "./models/rf_regressor"
     pull_dvc: True
 
 rf:
