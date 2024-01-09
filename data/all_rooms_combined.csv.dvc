@@ -1,0 +1,5 @@
+outs:
+- md5: d804320e26a628af84e288d4264743e1
+  size: 4886736
+  hash: md5
+  path: all_rooms_combined.csv
