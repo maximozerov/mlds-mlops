@@ -14,3 +14,8 @@ train_and_validate:
 
 transformer:
     save_path: './models/transformer.joblib'
+
+infer:
+    file_for_predictions: "./data/all_rooms_combined.csv"
+    save_path: "./data/predictions.csv"
+    predict_share: 0.3
