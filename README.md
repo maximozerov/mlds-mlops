@@ -4,7 +4,7 @@ Repo for MLOps Course homework @ MLDS Program, HSE
 The project utilises the code for the CIAN Price prediction project, being conducted @ HSE.
 The data is collected from CIAN website using beautifulsoap. My original repo is available [here](https://github.com/maximozerov/MLProject-CIAN).
 
-Data collected is already cleansed and preprocessed. The train & test dataset consists of flats for sale (from studios to 5+ rooms) in Moscow, Russia.
+Data collected is already cleansed and preprocessed. The consists of flats for sale (from studios to 5+ rooms) in Moscow, Russia.
 After multiple experiments conducted in Jupyter notebooks the best model so far is Random Forest Regressor, which is being used here for training and inference.
 
 This repo utilises several tools covered in the course:
