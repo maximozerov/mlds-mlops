@@ -15,6 +15,7 @@ This repo utilises several tools covered in the course:
 - mlflow for experiment tracking
 
 How to setup the repo after cloning:
-- create new environment using conda
-- do poetry install
-- do pre-commit install
+- create new environment using `conda`
+- do `poetry install`
+- do `pre-commit install`
+- do `dvc pull` to get the datasets and trained model
