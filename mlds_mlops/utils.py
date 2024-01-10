@@ -1,4 +1,5 @@
 import dvc.api
+import joblib
 import numpy as np
 import pandas as pd
 from skl2onnx import convert_sklearn
@@ -19,13 +20,14 @@ def make_train_test(test_size: 0.3):
         return (features_train, target_train), (features_test, target_test)
 
 
-def transform_dfs(train_df, test_df):
+def log_transform(x):
+    return np.log(x + 1)
+
+
+def transform_dfs(train_df, test_df, path_for_transformer):
     log = ["total_meters", "kitchen_meters"]
     categorical = ["admin_okrug", "subway", "is_skyscraper", "class_real", "way_to_subway"]
     ordinal = ["rooms"]
-
-    def log_transform(x):
-        return np.log(x + 1)
 
     log_transformer = FunctionTransformer(log_transform)
     col_transformer = ColumnTransformer(
@@ -40,6 +42,7 @@ def transform_dfs(train_df, test_df):
     X_train_transformed = col_transformer.fit_transform(train_df[0][log + categorical + ordinal])
     X_test_transformed = col_transformer.transform(test_df[0][log + categorical + ordinal])
 
+    save_transformer(col_transformer, path_for_transformer)
     return X_train_transformed, X_test_transformed
 
 
@@ -48,3 +51,7 @@ def save_model(model, path, features_shape):
     onnx_model = convert_sklearn(model, initial_types=initial_type)
     with open(path, "wb") as f:
         f.write(onnx_model.SerializeToString())
+
+
+def save_transformer(transformer, path):
+    joblib.dump(transformer, path)

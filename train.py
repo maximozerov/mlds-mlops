@@ -8,7 +8,9 @@ from sklearn.metrics import mean_absolute_error
 def train(cfg: DictConfig):
     train_df, test_df = make_train_test(cfg.train_and_validate.get("test_size", 0.2))
 
-    train_features, test_features = transform_dfs(train_df, test_df)
+    train_features, test_features = transform_dfs(
+        train_df, test_df, cfg.transformer.get("save_path")
+    )
 
     rf = RandomForestRegressor(
         criterion=cfg.rf.get("criterion"), n_estimators=cfg.rf.get("n_estimators", 200)

@@ -11,3 +11,6 @@ rf:
 
 train_and_validate:
     test_size: 0.3
+
+transformer:
+    save_path: './models/transformer.joblib'
